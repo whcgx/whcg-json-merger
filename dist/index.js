@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var polymerElement_js = require('@polymer/polymer/polymer-element.js');
 
 /**
- * `WhcgNumberFieldBox`
+ * `WhcgJsonMerger`
  * 
  * @customElement
  * @polymer
@@ -13,19 +13,16 @@ var polymerElement_js = require('@polymer/polymer/polymer-element.js');
 
 class WhcgJsonMerger extends polymerElement_js.PolymerElement {
     
-
-    
-
     static get properties() {
 
         return {
-            arrayreciever: {
+            whcgjsonarrayinput: {
                 type: String,
                 notify: true,
                 readOnly: false,
-                observer: '_observArray'
+                observer: '_whcgjsonarrayinputChanged'
             },
-            mergedjson: {
+            whcgjsonoutput: {
                 type: String,
                 notify: true,
                 readOnly: false,
@@ -33,21 +30,22 @@ class WhcgJsonMerger extends polymerElement_js.PolymerElement {
         }
     };
 
-    _observArray() {
-       let parsedJson = JSON.parse(this.arrayreciever);
-       let concatParsedJson = parsedJson[0].result.concat(parsedJson[1].result[0]);
+    _whcgjsonarrayinputChanged() {
+       
+       let parsedJson = JSON.parse(this.whcgjsonarrayinput);
 
-       let concatObj = {};
-        concatObj.result = concatParsedJson;
+       let resultsArr = parsedJson.map(item => item.result);
 
-       let concatJson = JSON.stringify(concatObj);
-        this.mergedjson = concatJson;
+       let result = resultsArr.reduce((acc, results) => {
+        return acc.concat(results);
+       }, []);
 
-        
-        console.log(this.mergedjson);
-    }
+       let whcgObj = {result: result};
+       console.log('whcgObj');
+       console.log(whcgObj);
 
-    
+       this.whcgjsonoutput = JSON.stringify(whcgObj);
+    } 
 }
 
 window.customElements.define('whcg-json-merger', WhcgJsonMerger);
