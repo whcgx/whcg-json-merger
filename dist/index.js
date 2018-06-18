@@ -31,20 +31,25 @@ class WhcgJsonMerger extends polymerElement_js.PolymerElement {
     };
 
     _whcgjsonarrayinputChanged() {
-       
-       let parsedJson = JSON.parse(this.whcgjsonarrayinput);
+        console.log('this.whcgjsonarrayinput');
+        console.log(this.whcgjsonarrayinput);
 
-       let resultsArr = parsedJson.map(item => item.result);
-
-       let result = resultsArr.reduce((acc, results) => {
-        return acc.concat(results);
-       }, []);
-
-       let whcgObj = {result: result};
-       console.log('whcgObj');
-       console.log(whcgObj);
-
-       this.whcgjsonoutput = JSON.stringify(whcgObj);
+        try {
+            let parsedJson = JSON.parse(this.whcgjsonarrayinput);
+            let resultsArr = parsedJson.map(item => item.result);
+     
+            let result = resultsArr.reduce((acc, results) => {
+             return acc.concat(results);
+            }, []);
+     
+            let whcgObj = {result: result};
+            console.log('whcgObj');
+            console.log(whcgObj);
+     
+            this.whcgjsonoutput = JSON.stringify(whcgObj);
+        } catch(error) {
+            console.log('Not propper JSON');
+        }
     } 
 }
 
