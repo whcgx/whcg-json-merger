@@ -7,6 +7,7 @@ import { PolymerElement } from '@polymer/polymer/polymer-element.js';
  * @polymer
  */
 
+
 export class WhcgJsonMerger extends PolymerElement {
     
     static get properties() {
