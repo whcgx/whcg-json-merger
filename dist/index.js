@@ -11,6 +11,7 @@ var polymerElement_js = require('@polymer/polymer/polymer-element.js');
  * @polymer
  */
 
+
 class WhcgJsonMerger extends polymerElement_js.PolymerElement {
     
     static get properties() {
