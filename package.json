@@ -1,23 +1,25 @@
 {
   "name": "@whcg/whcg-json-merger",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es6.js",
   "scripts": {
-    "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "build": "rollup -c"
+ },
   "files": [
-    "dist"
-  ],
+    "dist",
+    "theme"
+ ],
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whcgx/whcg-json-merger.git"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "rollup": "^0.60.7",
-    "rollup-plugin-node-resolve": "^3.3.0"
+  "bugs": {
+    "url": "https://github.com/whcgx/whcg-json-merger/issues"
   },
-  "dependencies": {
-    "@polymer/polymer": "^3.0.2"
-  }
+  "homepage": "https://github.com/whcgx/whcg-json-merger#readme"
 }

@@ -45,9 +45,10 @@ export class WhcgJsonMerger extends PolymerElement {
      
             this.whcgjsonoutput = JSON.stringify(whcgObj);
         } catch(error) {
-            console.log('Not propper JSON')
+            console.log('Not propper JSON');
         }
     } 
 }
 
 window.customElements.define('whcg-json-merger', WhcgJsonMerger);
+
