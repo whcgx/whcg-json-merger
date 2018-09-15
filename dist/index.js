@@ -32,8 +32,8 @@ class WhcgJsonMerger extends polymerElement_js.PolymerElement {
     };
 
     _whcgjsonarrayinputChanged() {
-        console.log('this.whcgjsonarrayinput');
-        console.log(this.whcgjsonarrayinput);
+        // console.log('this.whcgjsonarrayinput');
+        // console.log(this.whcgjsonarrayinput);
 
         try {
             let parsedJson = JSON.parse(this.whcgjsonarrayinput);
@@ -44,12 +44,12 @@ class WhcgJsonMerger extends polymerElement_js.PolymerElement {
             }, []);
      
             let whcgObj = {result: result};
-            console.log('whcgObj');
-            console.log(whcgObj);
+            // console.log('whcgObj');
+            // console.log(whcgObj);
      
             this.whcgjsonoutput = JSON.stringify(whcgObj);
         } catch(error) {
-            console.log('Not propper JSON');
+            // console.log('Not propper JSON');
         }
     } 
 }
